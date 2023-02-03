@@ -1,0 +1,22 @@
+ALGORITHM readSentence
+VAR
+    nbVowels , nbWords , nbCharacters : INTEGER :=0;
+    sentence : STRING[];
+BEGIN
+
+ Write("Type a sentence")
+ Read(sentence)
+ REPEAT 
+ IF (sentence[nbCharacters]= " ") THEN
+    nbWords := nbWords + 1;
+ END_IF
+ IF (sentence[nbCharacters] in ["a","e","u","i","o","y"]) THEN
+    nbVowels := nbVowels + 1;
+ END_IF
+ nbCharacters := nbCharacters + 1;
+ UNTIL (sentence[nbCharacters] = ".")
+ Write("the numbre of characters in the sentence is :", nbCharacters+1)
+ Write("the numbre of words in the sentence is :", nbWords+1)
+ Write("the numbre of vowels in the sentence is :", nbVowels+1)
+
+END
